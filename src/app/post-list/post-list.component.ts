@@ -32,9 +32,13 @@ export class PostListComponent implements OnInit, OnDestroy {
     this.postsService.removePost(post);
   }
 
-  /*onIncremente(i: number)*/
+  onIncremente(i: number){
+    this.postsService.onIncremente(i);
+  }
 
-  /*onDecremente(i: number)*/
+  onDecremente(i: number){
+    this.postsService.onDecremente(i);
+  }
 
   ngOnDestroy(){
     this.postsSubscription.unsubscribe();

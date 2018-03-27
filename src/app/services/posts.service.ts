@@ -46,4 +46,18 @@ export class PostsService {
     this.emitPost();
   }
 
+  /*onIncremente(i: number)*/
+  onIncremente(index: Number){
+    this.appareils[index].toIncremente();
+    this.emitPost();
+  }
+
+
+  /*onDecremente(i: number)*/
+  onDecremente(index: Number){
+    this.appareils[index].toDecremente();
+    this.emitPost();
+  }
+
+
 }
