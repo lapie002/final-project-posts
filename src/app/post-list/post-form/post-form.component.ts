@@ -20,7 +20,7 @@ export class PostFormComponent implements OnInit {
     this.initForm();
   }
 
-  init(){
+  initForm(){
     this.postForm = this.formBuilder.group(
       {
         title:     ['',Validators.required],
@@ -32,9 +32,11 @@ export class PostFormComponent implements OnInit {
   onSavePost(){
 
       const title = this.postForm.get('title').value;
-      const contenu = this.postForm.get('contenu').value;
-      const loveits = 0;
-      const create_at = new Date();
+      const contenu = this.postForm.get('content').value;
+      const loveits = '0';
+
+      const madate = new Date();
+      const create_at = '' + madate;
 
       const newPost = new Post(title,contenu,loveits,create_at);
 

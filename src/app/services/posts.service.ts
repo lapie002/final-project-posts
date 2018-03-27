@@ -46,18 +46,65 @@ export class PostsService {
     this.emitPost();
   }
 
-  /*onIncremente(i: number)*/
-  onIncremente(index: Number){
-    this.appareils[index].toIncremente();
+  toIncremente(post: Post){
+    post.loveits++;
+    this.savePosts();
     this.emitPost();
   }
 
+  toDecremente(post: Post){
+    post.loveits--;
+    this.savePosts();
+    this.emitPost();
+  }
+
+  /*onIncremente(i: number)*/
+  /*
+  onIncrementePost(post: Post){
+
+    const postIndexToIncrement = this.posts.findIndex(
+      (postElement)=>{
+          if(postElement === post){ return true;}
+       }
+    );
+    console.log("index : " + postIndexToIncrement);
+    const postSelected = this.posts[postIndexToIncrement];
+    console.log("post : " + postSelected);
+    post.toIncremente();
+
+    this.emitPost();
+
+    //this.posts[i].toIncremente();
+    //this.emitPost();
+
+  }
+*/
 
   /*onDecremente(i: number)*/
-  onDecremente(index: Number){
-    this.appareils[index].toDecremente();
-    this.emitPost();
+  /*
+  onDecremente(post: Post){
+    //this.posts[index].toDecremente();
+    //this.emitPost();
   }
+  */
+
+
+  /**migration des methodes*/
+  /*
+  getColor(){
+    if(this.loveits > 0){
+        return 'green';
+      }
+      else if(this.loveits < 0){
+        return 'red';
+      }
+      else{
+        return 'black';
+      }
+  }
+  */
+
+
 
 
 }

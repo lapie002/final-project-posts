@@ -28,20 +28,22 @@ export class PostListComponent implements OnInit, OnDestroy {
     this.router.navigate(['/posts','new']);
   }
 
-  onDelete(post: Post){
+  onDeletePost(post: Post){
     this.postsService.removePost(post);
   }
 
-  onIncremente(i: number){
-    this.postsService.onIncremente(i);
+
+  onIncremente(post: Post){
+    this.postsService.toIncremente(post);
   }
 
-  onDecremente(i: number){
-    this.postsService.onDecremente(i);
+  onDecremente(post: Post){
+    this.postsService.toDecremente(post);
   }
 
   ngOnDestroy(){
     this.postsSubscription.unsubscribe();
   }
+
 
 }

@@ -17,9 +17,7 @@ const appRoutes: Routes = [
 
   { path: 'posts', component: PostListComponent },
   { path: 'posts/new', component: PostFormComponent },
-  { path: '', redirectTo: 'posts', pathMatch: 'full' },
-  { path: '**', redirectTo: 'posts' }
-
+  { path: '', component: PostListComponent }
 ];
 
 
@@ -31,7 +29,7 @@ const appRoutes: Routes = [
     HeaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
